@@ -2,13 +2,11 @@ package com.example.dome.dao;
 
 import com.example.dome.model.Employee;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
-import org.springframework.stereotype.Component;
 
 /**
  * @author Tangshengbo
  * @date 2019/8/20
  */
-@Component
 public interface EmployeeRepository extends ElasticsearchRepository<Employee, String> {
 
     /**
@@ -18,4 +16,5 @@ public interface EmployeeRepository extends ElasticsearchRepository<Employee, St
      * @return
      */
     Employee queryEmployeeById(String id);
+
 }

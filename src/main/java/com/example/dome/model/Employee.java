@@ -1,18 +1,23 @@
 package com.example.dome.model;
 
+
+import com.alibaba.fastjson.JSON;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
+
+import java.util.Date;
 
 /**
  * @author Tangshengbo
  * @date 2019/8/20
  */
-@Document(indexName = "company", type = "employee", shards = 1, replicas = 0, refreshInterval = "-1")
+@Document(indexName = "company", type = "employee")
 public class Employee {
 
     @Id
     private String id;
+
     @Field
     private String firstName;
     @Field
@@ -22,8 +27,19 @@ public class Employee {
     @Field
     private String about;
 
+    @Field
+    private Date date;
+
     public String getId() {
         return id;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public void setId(String id) {
@@ -60,5 +76,10 @@ public class Employee {
 
     public void setAbout(String about) {
         this.about = about;
+    }
+
+    @Override
+    public String toString() {
+        return JSON.toJSONString(this);
     }
 }

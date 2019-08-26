@@ -1,0 +1,1536 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.dome.dao.BondBasicInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.example.dome.model.BondBasicInfo" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="bond_uni_code" property="bondUniCode" jdbcType="BIGINT" />
+    <result column="bond_code" property="bondCode" jdbcType="VARCHAR" />
+    <result column="bond_short_name" property="bondShortName" jdbcType="VARCHAR" />
+    <result column="bond_full_name" property="bondFullName" jdbcType="VARCHAR" />
+    <result column="com_uni_code" property="comUniCode" jdbcType="BIGINT" />
+    <result column="iss_name" property="issName" jdbcType="VARCHAR" />
+    <result column="iss_start_date" property="issStartDate" jdbcType="TIMESTAMP" />
+    <result column="iss_end_date" property="issEndDate" jdbcType="TIMESTAMP" />
+    <result column="year_pay_date" property="yearPayDate" jdbcType="VARCHAR" />
+    <result column="inte_start_date" property="inteStartDate" jdbcType="TIMESTAMP" />
+    <result column="theo_end_date" property="theoEndDate" jdbcType="TIMESTAMP" />
+    <result column="inte_pay_freq" property="intePayFreq" jdbcType="INTEGER" />
+    <result column="inte_pay_cls_par" property="intePayClsPar" jdbcType="INTEGER" />
+    <result column="exer_pay_date" property="exerPayDate" jdbcType="VARCHAR" />
+    <result column="plan_iss_amut" property="planIssAmut" jdbcType="DECIMAL" />
+    <result column="actu_iss_amut" property="actuIssAmut" jdbcType="DECIMAL" />
+    <result column="bond_matu" property="bondMatu" jdbcType="DECIMAL" />
+    <result column="bond_type_par" property="bondTypePar" jdbcType="INTEGER" />
+    <result column="cred_uni_code" property="credUniCode" jdbcType="BIGINT" />
+    <result column="rate_type_par" property="rateTypePar" jdbcType="INTEGER" />
+    <result column="iss_coup_rate" property="issCoupRate" jdbcType="DECIMAL" />
+    <result column="base_rate_par" property="baseRatePar" jdbcType="VARCHAR" />
+    <result column="list_date" property="listDate" jdbcType="TIMESTAMP" />
+    <result column="list_decl_date" property="listDeclDate" jdbcType="TIMESTAMP" />
+    <result column="sec_mar_par" property="secMarPar" jdbcType="VARCHAR" />
+    <result column="unde_cls_par" property="undeClsPar" jdbcType="INTEGER" />
+    <result column="iss_pri" property="issPri" jdbcType="DECIMAL" />
+    <result column="iss_status" property="issStatus" jdbcType="VARCHAR" />
+    <result column="is_new" property="isNew" jdbcType="VARCHAR" />
+    <result column="bond_iss_year" property="bondIssYear" jdbcType="VARCHAR" />
+    <result column="iss_decl_date" property="issDeclDate" jdbcType="TIMESTAMP" />
+    <result column="is_public_iss" property="isPublicIss" jdbcType="VARCHAR" />
+    <result column="iss_fee_rate" property="issFeeRate" jdbcType="DECIMAL" />
+    <result column="bokep_date" property="bokepDate" jdbcType="TIMESTAMP" />
+    <result column="debt_reg_date" property="debtRegDate" jdbcType="TIMESTAMP" />
+    <result column="new_size" property="newSize" jdbcType="DECIMAL" />
+    <result column="subs_unit" property="subsUnit" jdbcType="DECIMAL" />
+    <result column="least_subs_unit" property="leastSubsUnit" jdbcType="DECIMAL" />
+    <result column="cury_type_par" property="curyTypePar" jdbcType="INTEGER" />
+    <result column="is_list_par" property="isListPar" jdbcType="INTEGER" />
+    <result column="trade_unit" property="tradeUnit" jdbcType="VARCHAR" />
+    <result column="circu_amut" property="circuAmut" jdbcType="DECIMAL" />
+    <result column="is_cros_mar_par" property="isCrosMarPar" jdbcType="VARCHAR" />
+    <result column="list_sect_par" property="listSectPar" jdbcType="INTEGER" />
+    <result column="list_sta_par" property="listStaPar" jdbcType="INTEGER" />
+    <result column="theo_delist_date" property="theoDelistDate" jdbcType="TIMESTAMP" />
+    <result column="last_trade_date" property="lastTradeDate" jdbcType="TIMESTAMP" />
+    <result column="actu_delist_date" property="actuDelistDate" jdbcType="TIMESTAMP" />
+    <result column="spe_short_name" property="speShortName" jdbcType="VARCHAR" />
+    <result column="eng_full_name" property="engFullName" jdbcType="VARCHAR" />
+    <result column="eng_short_name" property="engShortName" jdbcType="VARCHAR" />
+    <result column="isin_code" property="isinCode" jdbcType="VARCHAR" />
+    <result column="curr_status" property="currStatus" jdbcType="INTEGER" />
+    <result column="bond_par_val" property="bondParVal" jdbcType="DECIMAL" />
+    <result column="is_type_par" property="isTypePar" jdbcType="INTEGER" />
+    <result column="bond_form_par" property="bondFormPar" jdbcType="INTEGER" />
+    <result column="actu_end_date" property="actuEndDate" jdbcType="TIMESTAMP" />
+    <result column="new_coup_rate" property="newCoupRate" jdbcType="DECIMAL" />
+    <result column="ref_yield" property="refYield" jdbcType="DECIMAL" />
+    <result column="init_base_rate_date" property="initBaseRateDate" jdbcType="TIMESTAMP" />
+    <result column="base_rate" property="baseRate" jdbcType="DECIMAL" />
+    <result column="opt_extra_spr" property="optExtraSpr" jdbcType="DECIMAL" />
+    <result column="extra_spr_seq_num" property="extraSprSeqNum" jdbcType="INTEGER" />
+    <result column="rate_ceil" property="rateCeil" jdbcType="DECIMAL" />
+    <result column="rate_floor" property="rateFloor" jdbcType="DECIMAL" />
+    <result column="inte_calcu_cls_par" property="inteCalcuClsPar" jdbcType="INTEGER" />
+    <result column="is_segm_par" property="isSegmPar" jdbcType="INTEGER" />
+    <result column="simp_comp_inte_par" property="simpCompIntePar" jdbcType="INTEGER" />
+    <result column="repay_cls_pay_par" property="repayClsPayPar" jdbcType="INTEGER" />
+    <result column="matu_pay_date" property="matuPayDate" jdbcType="TIMESTAMP" />
+    <result column="pay_fee_rate" property="payFeeRate" jdbcType="DECIMAL" />
+    <result column="is_guar_par" property="isGuarPar" jdbcType="INTEGER" />
+    <result column="is_repu_par" property="isRepuPar" jdbcType="INTEGER" />
+    <result column="pledge_code" property="pledgeCode" jdbcType="VARCHAR" />
+    <result column="pledge_name" property="pledgeName" jdbcType="VARCHAR" />
+    <result column="is_redem_par" property="isRedemPar" jdbcType="INTEGER" />
+    <result column="is_resa_par" property="isResaPar" jdbcType="INTEGER" />
+    <result column="is_hedge_par" property="isHedgePar" jdbcType="INTEGER" />
+    <result column="is_tax_free_par" property="isTaxFreePar" jdbcType="INTEGER" />
+    <result column="matu_unit_par" property="matuUnitPar" jdbcType="INTEGER" />
+    <result column="iss_sta_par" property="issStaPar" jdbcType="INTEGER" />
+    <result column="bond_id" property="bondId" jdbcType="BIGINT" />
+    <result column="create_user" property="createUser" jdbcType="BIGINT" />
+    <result column="last_update_user" property="lastUpdateUser" jdbcType="BIGINT" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="last_update_time" property="lastUpdateTime" jdbcType="TIMESTAMP" />
+    <result column="del_status" property="delStatus" jdbcType="TINYINT" />
+    <result column="data_source" property="dataSource" jdbcType="INTEGER" />
+    <result column="bond_type" property="bondType" jdbcType="INTEGER" />
+    <result column="info_state" property="infoState" jdbcType="INTEGER" />
+    <result column="save_status" property="saveStatus" jdbcType="TINYINT" />
+    <result column="iss_cred_level_par" property="issCredLevelPar" jdbcType="INTEGER" />
+    <result column="iss_cred_level" property="issCredLevel" jdbcType="VARCHAR" />
+    <result column="bond_cred_level_par" property="bondCredLevelPar" jdbcType="INTEGER" />
+    <result column="bond_cred_level" property="bondCredLevel" jdbcType="VARCHAR" />
+    <result column="pd" property="pd" jdbcType="VARCHAR" />
+    <result column="pd_diff" property="pdDiff" jdbcType="INTEGER" />
+    <result column="pd_num" property="pdNum" jdbcType="INTEGER" />
+    <result column="org_id" property="orgId" jdbcType="INTEGER" />
+    <result column="entry_status" property="entryStatus" jdbcType="INTEGER" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.example.dome.model.BondBasicInfoWithBLOBs" extends="BaseResultMap" >
+    <result column="year_pay_matu" property="yearPayMatu" jdbcType="LONGVARCHAR" />
+    <result column="rate_des" property="rateDes" jdbcType="LONGVARCHAR" />
+    <result column="coll_cap_purp" property="collCapPurp" jdbcType="LONGVARCHAR" />
+    <result column="unde_name" property="undeName" jdbcType="LONGVARCHAR" />
+    <result column="iss_cls" property="issCls" jdbcType="LONGVARCHAR" />
+    <result column="iss_cls_des" property="issClsDes" jdbcType="LONGVARCHAR" />
+    <result column="iss_obj" property="issObj" jdbcType="LONGVARCHAR" />
+    <result column="cros_mar_des" property="crosMarDes" jdbcType="LONGVARCHAR" />
+    <result column="inte_des" property="inteDes" jdbcType="LONGVARCHAR" />
+    <result column="inte_pay_meth" property="intePayMeth" jdbcType="LONGVARCHAR" />
+    <result column="pay_matu" property="payMatu" jdbcType="LONGVARCHAR" />
+    <result column="pay_cls_des" property="payClsDes" jdbcType="LONGVARCHAR" />
+    <result column="opt_des" property="optDes" jdbcType="LONGVARCHAR" />
+    <result column="gura_name" property="guraName" jdbcType="LONGVARCHAR" />
+    <result column="gura_name1" property="guraName1" jdbcType="LONGVARCHAR" />
+    <result column="spom_name" property="spomName" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, bond_uni_code, bond_code, bond_short_name, bond_full_name, com_uni_code, iss_name, 
+    iss_start_date, iss_end_date, year_pay_date, inte_start_date, theo_end_date, inte_pay_freq, 
+    inte_pay_cls_par, exer_pay_date, plan_iss_amut, actu_iss_amut, bond_matu, bond_type_par, 
+    cred_uni_code, rate_type_par, iss_coup_rate, base_rate_par, list_date, list_decl_date, 
+    sec_mar_par, unde_cls_par, iss_pri, iss_status, is_new, bond_iss_year, iss_decl_date, 
+    is_public_iss, iss_fee_rate, bokep_date, debt_reg_date, new_size, subs_unit, least_subs_unit, 
+    cury_type_par, is_list_par, trade_unit, circu_amut, is_cros_mar_par, list_sect_par, 
+    list_sta_par, theo_delist_date, last_trade_date, actu_delist_date, spe_short_name, 
+    eng_full_name, eng_short_name, isin_code, curr_status, bond_par_val, is_type_par, 
+    bond_form_par, actu_end_date, new_coup_rate, ref_yield, init_base_rate_date, base_rate, 
+    opt_extra_spr, extra_spr_seq_num, rate_ceil, rate_floor, inte_calcu_cls_par, is_segm_par, 
+    simp_comp_inte_par, repay_cls_pay_par, matu_pay_date, pay_fee_rate, is_guar_par, 
+    is_repu_par, pledge_code, pledge_name, is_redem_par, is_resa_par, is_hedge_par, is_tax_free_par, 
+    matu_unit_par, iss_sta_par, bond_id, create_user, last_update_user, create_time, 
+    last_update_time, del_status, data_source, bond_type, info_state, save_status, iss_cred_level_par, 
+    iss_cred_level, bond_cred_level_par, bond_cred_level, pd, pd_diff, pd_num, org_id, 
+    entry_status
+  </sql>
+  <sql id="Blob_Column_List" >
+    year_pay_matu, rate_des, coll_cap_purp, unde_name, iss_cls, iss_cls_des, iss_obj, 
+    cros_mar_des, inte_des, inte_pay_meth, pay_matu, pay_cls_des, opt_des, gura_name, 
+    gura_name1, spom_name
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from t_bond_basic_info
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="findById" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select
+    <include refid="Base_Column_List" />
+    from t_bond_basic_info
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_bond_basic_info
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.example.dome.model.BondBasicInfoWithBLOBs" >
+    insert into t_bond_basic_info (id, bond_uni_code, bond_code, 
+      bond_short_name, bond_full_name, com_uni_code, 
+      iss_name, iss_start_date, iss_end_date, 
+      year_pay_date, inte_start_date, theo_end_date, 
+      inte_pay_freq, inte_pay_cls_par, exer_pay_date, 
+      plan_iss_amut, actu_iss_amut, bond_matu, 
+      bond_type_par, cred_uni_code, rate_type_par, 
+      iss_coup_rate, base_rate_par, list_date, 
+      list_decl_date, sec_mar_par, unde_cls_par, 
+      iss_pri, iss_status, is_new, 
+      bond_iss_year, iss_decl_date, is_public_iss, 
+      iss_fee_rate, bokep_date, debt_reg_date, 
+      new_size, subs_unit, least_subs_unit, 
+      cury_type_par, is_list_par, trade_unit, 
+      circu_amut, is_cros_mar_par, list_sect_par, 
+      list_sta_par, theo_delist_date, last_trade_date, 
+      actu_delist_date, spe_short_name, eng_full_name, 
+      eng_short_name, isin_code, curr_status, 
+      bond_par_val, is_type_par, bond_form_par, 
+      actu_end_date, new_coup_rate, ref_yield, 
+      init_base_rate_date, base_rate, opt_extra_spr, 
+      extra_spr_seq_num, rate_ceil, rate_floor, 
+      inte_calcu_cls_par, is_segm_par, simp_comp_inte_par, 
+      repay_cls_pay_par, matu_pay_date, pay_fee_rate, 
+      is_guar_par, is_repu_par, pledge_code, 
+      pledge_name, is_redem_par, is_resa_par, 
+      is_hedge_par, is_tax_free_par, matu_unit_par, 
+      iss_sta_par, bond_id, create_user, 
+      last_update_user, create_time, last_update_time, 
+      del_status, data_source, bond_type, 
+      info_state, save_status, iss_cred_level_par, 
+      iss_cred_level, bond_cred_level_par, bond_cred_level, 
+      pd, pd_diff, pd_num, 
+      org_id, entry_status, year_pay_matu, 
+      rate_des, coll_cap_purp, unde_name, 
+      iss_cls, iss_cls_des, iss_obj, 
+      cros_mar_des, inte_des, inte_pay_meth, 
+      pay_matu, pay_cls_des, opt_des, 
+      gura_name, gura_name1, spom_name
+      )
+    values (#{id,jdbcType=BIGINT}, #{bondUniCode,jdbcType=BIGINT}, #{bondCode,jdbcType=VARCHAR}, 
+      #{bondShortName,jdbcType=VARCHAR}, #{bondFullName,jdbcType=VARCHAR}, #{comUniCode,jdbcType=BIGINT}, 
+      #{issName,jdbcType=VARCHAR}, #{issStartDate,jdbcType=TIMESTAMP}, #{issEndDate,jdbcType=TIMESTAMP}, 
+      #{yearPayDate,jdbcType=VARCHAR}, #{inteStartDate,jdbcType=TIMESTAMP}, #{theoEndDate,jdbcType=TIMESTAMP}, 
+      #{intePayFreq,jdbcType=INTEGER}, #{intePayClsPar,jdbcType=INTEGER}, #{exerPayDate,jdbcType=VARCHAR}, 
+      #{planIssAmut,jdbcType=DECIMAL}, #{actuIssAmut,jdbcType=DECIMAL}, #{bondMatu,jdbcType=DECIMAL}, 
+      #{bondTypePar,jdbcType=INTEGER}, #{credUniCode,jdbcType=BIGINT}, #{rateTypePar,jdbcType=INTEGER}, 
+      #{issCoupRate,jdbcType=DECIMAL}, #{baseRatePar,jdbcType=VARCHAR}, #{listDate,jdbcType=TIMESTAMP}, 
+      #{listDeclDate,jdbcType=TIMESTAMP}, #{secMarPar,jdbcType=VARCHAR}, #{undeClsPar,jdbcType=INTEGER}, 
+      #{issPri,jdbcType=DECIMAL}, #{issStatus,jdbcType=VARCHAR}, #{isNew,jdbcType=VARCHAR}, 
+      #{bondIssYear,jdbcType=VARCHAR}, #{issDeclDate,jdbcType=TIMESTAMP}, #{isPublicIss,jdbcType=VARCHAR}, 
+      #{issFeeRate,jdbcType=DECIMAL}, #{bokepDate,jdbcType=TIMESTAMP}, #{debtRegDate,jdbcType=TIMESTAMP}, 
+      #{newSize,jdbcType=DECIMAL}, #{subsUnit,jdbcType=DECIMAL}, #{leastSubsUnit,jdbcType=DECIMAL}, 
+      #{curyTypePar,jdbcType=INTEGER}, #{isListPar,jdbcType=INTEGER}, #{tradeUnit,jdbcType=VARCHAR}, 
+      #{circuAmut,jdbcType=DECIMAL}, #{isCrosMarPar,jdbcType=VARCHAR}, #{listSectPar,jdbcType=INTEGER}, 
+      #{listStaPar,jdbcType=INTEGER}, #{theoDelistDate,jdbcType=TIMESTAMP}, #{lastTradeDate,jdbcType=TIMESTAMP}, 
+      #{actuDelistDate,jdbcType=TIMESTAMP}, #{speShortName,jdbcType=VARCHAR}, #{engFullName,jdbcType=VARCHAR}, 
+      #{engShortName,jdbcType=VARCHAR}, #{isinCode,jdbcType=VARCHAR}, #{currStatus,jdbcType=INTEGER}, 
+      #{bondParVal,jdbcType=DECIMAL}, #{isTypePar,jdbcType=INTEGER}, #{bondFormPar,jdbcType=INTEGER}, 
+      #{actuEndDate,jdbcType=TIMESTAMP}, #{newCoupRate,jdbcType=DECIMAL}, #{refYield,jdbcType=DECIMAL}, 
+      #{initBaseRateDate,jdbcType=TIMESTAMP}, #{baseRate,jdbcType=DECIMAL}, #{optExtraSpr,jdbcType=DECIMAL}, 
+      #{extraSprSeqNum,jdbcType=INTEGER}, #{rateCeil,jdbcType=DECIMAL}, #{rateFloor,jdbcType=DECIMAL}, 
+      #{inteCalcuClsPar,jdbcType=INTEGER}, #{isSegmPar,jdbcType=INTEGER}, #{simpCompIntePar,jdbcType=INTEGER}, 
+      #{repayClsPayPar,jdbcType=INTEGER}, #{matuPayDate,jdbcType=TIMESTAMP}, #{payFeeRate,jdbcType=DECIMAL}, 
+      #{isGuarPar,jdbcType=INTEGER}, #{isRepuPar,jdbcType=INTEGER}, #{pledgeCode,jdbcType=VARCHAR}, 
+      #{pledgeName,jdbcType=VARCHAR}, #{isRedemPar,jdbcType=INTEGER}, #{isResaPar,jdbcType=INTEGER}, 
+      #{isHedgePar,jdbcType=INTEGER}, #{isTaxFreePar,jdbcType=INTEGER}, #{matuUnitPar,jdbcType=INTEGER}, 
+      #{issStaPar,jdbcType=INTEGER}, #{bondId,jdbcType=BIGINT}, #{createUser,jdbcType=BIGINT}, 
+      #{lastUpdateUser,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, #{lastUpdateTime,jdbcType=TIMESTAMP}, 
+      #{delStatus,jdbcType=TINYINT}, #{dataSource,jdbcType=INTEGER}, #{bondType,jdbcType=INTEGER}, 
+      #{infoState,jdbcType=INTEGER}, #{saveStatus,jdbcType=TINYINT}, #{issCredLevelPar,jdbcType=INTEGER}, 
+      #{issCredLevel,jdbcType=VARCHAR}, #{bondCredLevelPar,jdbcType=INTEGER}, #{bondCredLevel,jdbcType=VARCHAR}, 
+      #{pd,jdbcType=VARCHAR}, #{pdDiff,jdbcType=INTEGER}, #{pdNum,jdbcType=INTEGER}, 
+      #{orgId,jdbcType=INTEGER}, #{entryStatus,jdbcType=INTEGER}, #{yearPayMatu,jdbcType=LONGVARCHAR}, 
+      #{rateDes,jdbcType=LONGVARCHAR}, #{collCapPurp,jdbcType=LONGVARCHAR}, #{undeName,jdbcType=LONGVARCHAR}, 
+      #{issCls,jdbcType=LONGVARCHAR}, #{issClsDes,jdbcType=LONGVARCHAR}, #{issObj,jdbcType=LONGVARCHAR}, 
+      #{crosMarDes,jdbcType=LONGVARCHAR}, #{inteDes,jdbcType=LONGVARCHAR}, #{intePayMeth,jdbcType=LONGVARCHAR}, 
+      #{payMatu,jdbcType=LONGVARCHAR}, #{payClsDes,jdbcType=LONGVARCHAR}, #{optDes,jdbcType=LONGVARCHAR}, 
+      #{guraName,jdbcType=LONGVARCHAR}, #{guraName1,jdbcType=LONGVARCHAR}, #{spomName,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.dome.model.BondBasicInfoWithBLOBs" >
+    insert into t_bond_basic_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="bondUniCode != null" >
+        bond_uni_code,
+      </if>
+      <if test="bondCode != null" >
+        bond_code,
+      </if>
+      <if test="bondShortName != null" >
+        bond_short_name,
+      </if>
+      <if test="bondFullName != null" >
+        bond_full_name,
+      </if>
+      <if test="comUniCode != null" >
+        com_uni_code,
+      </if>
+      <if test="issName != null" >
+        iss_name,
+      </if>
+      <if test="issStartDate != null" >
+        iss_start_date,
+      </if>
+      <if test="issEndDate != null" >
+        iss_end_date,
+      </if>
+      <if test="yearPayDate != null" >
+        year_pay_date,
+      </if>
+      <if test="inteStartDate != null" >
+        inte_start_date,
+      </if>
+      <if test="theoEndDate != null" >
+        theo_end_date,
+      </if>
+      <if test="intePayFreq != null" >
+        inte_pay_freq,
+      </if>
+      <if test="intePayClsPar != null" >
+        inte_pay_cls_par,
+      </if>
+      <if test="exerPayDate != null" >
+        exer_pay_date,
+      </if>
+      <if test="planIssAmut != null" >
+        plan_iss_amut,
+      </if>
+      <if test="actuIssAmut != null" >
+        actu_iss_amut,
+      </if>
+      <if test="bondMatu != null" >
+        bond_matu,
+      </if>
+      <if test="bondTypePar != null" >
+        bond_type_par,
+      </if>
+      <if test="credUniCode != null" >
+        cred_uni_code,
+      </if>
+      <if test="rateTypePar != null" >
+        rate_type_par,
+      </if>
+      <if test="issCoupRate != null" >
+        iss_coup_rate,
+      </if>
+      <if test="baseRatePar != null" >
+        base_rate_par,
+      </if>
+      <if test="listDate != null" >
+        list_date,
+      </if>
+      <if test="listDeclDate != null" >
+        list_decl_date,
+      </if>
+      <if test="secMarPar != null" >
+        sec_mar_par,
+      </if>
+      <if test="undeClsPar != null" >
+        unde_cls_par,
+      </if>
+      <if test="issPri != null" >
+        iss_pri,
+      </if>
+      <if test="issStatus != null" >
+        iss_status,
+      </if>
+      <if test="isNew != null" >
+        is_new,
+      </if>
+      <if test="bondIssYear != null" >
+        bond_iss_year,
+      </if>
+      <if test="issDeclDate != null" >
+        iss_decl_date,
+      </if>
+      <if test="isPublicIss != null" >
+        is_public_iss,
+      </if>
+      <if test="issFeeRate != null" >
+        iss_fee_rate,
+      </if>
+      <if test="bokepDate != null" >
+        bokep_date,
+      </if>
+      <if test="debtRegDate != null" >
+        debt_reg_date,
+      </if>
+      <if test="newSize != null" >
+        new_size,
+      </if>
+      <if test="subsUnit != null" >
+        subs_unit,
+      </if>
+      <if test="leastSubsUnit != null" >
+        least_subs_unit,
+      </if>
+      <if test="curyTypePar != null" >
+        cury_type_par,
+      </if>
+      <if test="isListPar != null" >
+        is_list_par,
+      </if>
+      <if test="tradeUnit != null" >
+        trade_unit,
+      </if>
+      <if test="circuAmut != null" >
+        circu_amut,
+      </if>
+      <if test="isCrosMarPar != null" >
+        is_cros_mar_par,
+      </if>
+      <if test="listSectPar != null" >
+        list_sect_par,
+      </if>
+      <if test="listStaPar != null" >
+        list_sta_par,
+      </if>
+      <if test="theoDelistDate != null" >
+        theo_delist_date,
+      </if>
+      <if test="lastTradeDate != null" >
+        last_trade_date,
+      </if>
+      <if test="actuDelistDate != null" >
+        actu_delist_date,
+      </if>
+      <if test="speShortName != null" >
+        spe_short_name,
+      </if>
+      <if test="engFullName != null" >
+        eng_full_name,
+      </if>
+      <if test="engShortName != null" >
+        eng_short_name,
+      </if>
+      <if test="isinCode != null" >
+        isin_code,
+      </if>
+      <if test="currStatus != null" >
+        curr_status,
+      </if>
+      <if test="bondParVal != null" >
+        bond_par_val,
+      </if>
+      <if test="isTypePar != null" >
+        is_type_par,
+      </if>
+      <if test="bondFormPar != null" >
+        bond_form_par,
+      </if>
+      <if test="actuEndDate != null" >
+        actu_end_date,
+      </if>
+      <if test="newCoupRate != null" >
+        new_coup_rate,
+      </if>
+      <if test="refYield != null" >
+        ref_yield,
+      </if>
+      <if test="initBaseRateDate != null" >
+        init_base_rate_date,
+      </if>
+      <if test="baseRate != null" >
+        base_rate,
+      </if>
+      <if test="optExtraSpr != null" >
+        opt_extra_spr,
+      </if>
+      <if test="extraSprSeqNum != null" >
+        extra_spr_seq_num,
+      </if>
+      <if test="rateCeil != null" >
+        rate_ceil,
+      </if>
+      <if test="rateFloor != null" >
+        rate_floor,
+      </if>
+      <if test="inteCalcuClsPar != null" >
+        inte_calcu_cls_par,
+      </if>
+      <if test="isSegmPar != null" >
+        is_segm_par,
+      </if>
+      <if test="simpCompIntePar != null" >
+        simp_comp_inte_par,
+      </if>
+      <if test="repayClsPayPar != null" >
+        repay_cls_pay_par,
+      </if>
+      <if test="matuPayDate != null" >
+        matu_pay_date,
+      </if>
+      <if test="payFeeRate != null" >
+        pay_fee_rate,
+      </if>
+      <if test="isGuarPar != null" >
+        is_guar_par,
+      </if>
+      <if test="isRepuPar != null" >
+        is_repu_par,
+      </if>
+      <if test="pledgeCode != null" >
+        pledge_code,
+      </if>
+      <if test="pledgeName != null" >
+        pledge_name,
+      </if>
+      <if test="isRedemPar != null" >
+        is_redem_par,
+      </if>
+      <if test="isResaPar != null" >
+        is_resa_par,
+      </if>
+      <if test="isHedgePar != null" >
+        is_hedge_par,
+      </if>
+      <if test="isTaxFreePar != null" >
+        is_tax_free_par,
+      </if>
+      <if test="matuUnitPar != null" >
+        matu_unit_par,
+      </if>
+      <if test="issStaPar != null" >
+        iss_sta_par,
+      </if>
+      <if test="bondId != null" >
+        bond_id,
+      </if>
+      <if test="createUser != null" >
+        create_user,
+      </if>
+      <if test="lastUpdateUser != null" >
+        last_update_user,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="lastUpdateTime != null" >
+        last_update_time,
+      </if>
+      <if test="delStatus != null" >
+        del_status,
+      </if>
+      <if test="dataSource != null" >
+        data_source,
+      </if>
+      <if test="bondType != null" >
+        bond_type,
+      </if>
+      <if test="infoState != null" >
+        info_state,
+      </if>
+      <if test="saveStatus != null" >
+        save_status,
+      </if>
+      <if test="issCredLevelPar != null" >
+        iss_cred_level_par,
+      </if>
+      <if test="issCredLevel != null" >
+        iss_cred_level,
+      </if>
+      <if test="bondCredLevelPar != null" >
+        bond_cred_level_par,
+      </if>
+      <if test="bondCredLevel != null" >
+        bond_cred_level,
+      </if>
+      <if test="pd != null" >
+        pd,
+      </if>
+      <if test="pdDiff != null" >
+        pd_diff,
+      </if>
+      <if test="pdNum != null" >
+        pd_num,
+      </if>
+      <if test="orgId != null" >
+        org_id,
+      </if>
+      <if test="entryStatus != null" >
+        entry_status,
+      </if>
+      <if test="yearPayMatu != null" >
+        year_pay_matu,
+      </if>
+      <if test="rateDes != null" >
+        rate_des,
+      </if>
+      <if test="collCapPurp != null" >
+        coll_cap_purp,
+      </if>
+      <if test="undeName != null" >
+        unde_name,
+      </if>
+      <if test="issCls != null" >
+        iss_cls,
+      </if>
+      <if test="issClsDes != null" >
+        iss_cls_des,
+      </if>
+      <if test="issObj != null" >
+        iss_obj,
+      </if>
+      <if test="crosMarDes != null" >
+        cros_mar_des,
+      </if>
+      <if test="inteDes != null" >
+        inte_des,
+      </if>
+      <if test="intePayMeth != null" >
+        inte_pay_meth,
+      </if>
+      <if test="payMatu != null" >
+        pay_matu,
+      </if>
+      <if test="payClsDes != null" >
+        pay_cls_des,
+      </if>
+      <if test="optDes != null" >
+        opt_des,
+      </if>
+      <if test="guraName != null" >
+        gura_name,
+      </if>
+      <if test="guraName1 != null" >
+        gura_name1,
+      </if>
+      <if test="spomName != null" >
+        spom_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="bondUniCode != null" >
+        #{bondUniCode,jdbcType=BIGINT},
+      </if>
+      <if test="bondCode != null" >
+        #{bondCode,jdbcType=VARCHAR},
+      </if>
+      <if test="bondShortName != null" >
+        #{bondShortName,jdbcType=VARCHAR},
+      </if>
+      <if test="bondFullName != null" >
+        #{bondFullName,jdbcType=VARCHAR},
+      </if>
+      <if test="comUniCode != null" >
+        #{comUniCode,jdbcType=BIGINT},
+      </if>
+      <if test="issName != null" >
+        #{issName,jdbcType=VARCHAR},
+      </if>
+      <if test="issStartDate != null" >
+        #{issStartDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="issEndDate != null" >
+        #{issEndDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="yearPayDate != null" >
+        #{yearPayDate,jdbcType=VARCHAR},
+      </if>
+      <if test="inteStartDate != null" >
+        #{inteStartDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="theoEndDate != null" >
+        #{theoEndDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="intePayFreq != null" >
+        #{intePayFreq,jdbcType=INTEGER},
+      </if>
+      <if test="intePayClsPar != null" >
+        #{intePayClsPar,jdbcType=INTEGER},
+      </if>
+      <if test="exerPayDate != null" >
+        #{exerPayDate,jdbcType=VARCHAR},
+      </if>
+      <if test="planIssAmut != null" >
+        #{planIssAmut,jdbcType=DECIMAL},
+      </if>
+      <if test="actuIssAmut != null" >
+        #{actuIssAmut,jdbcType=DECIMAL},
+      </if>
+      <if test="bondMatu != null" >
+        #{bondMatu,jdbcType=DECIMAL},
+      </if>
+      <if test="bondTypePar != null" >
+        #{bondTypePar,jdbcType=INTEGER},
+      </if>
+      <if test="credUniCode != null" >
+        #{credUniCode,jdbcType=BIGINT},
+      </if>
+      <if test="rateTypePar != null" >
+        #{rateTypePar,jdbcType=INTEGER},
+      </if>
+      <if test="issCoupRate != null" >
+        #{issCoupRate,jdbcType=DECIMAL},
+      </if>
+      <if test="baseRatePar != null" >
+        #{baseRatePar,jdbcType=VARCHAR},
+      </if>
+      <if test="listDate != null" >
+        #{listDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="listDeclDate != null" >
+        #{listDeclDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="secMarPar != null" >
+        #{secMarPar,jdbcType=VARCHAR},
+      </if>
+      <if test="undeClsPar != null" >
+        #{undeClsPar,jdbcType=INTEGER},
+      </if>
+      <if test="issPri != null" >
+        #{issPri,jdbcType=DECIMAL},
+      </if>
+      <if test="issStatus != null" >
+        #{issStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="isNew != null" >
+        #{isNew,jdbcType=VARCHAR},
+      </if>
+      <if test="bondIssYear != null" >
+        #{bondIssYear,jdbcType=VARCHAR},
+      </if>
+      <if test="issDeclDate != null" >
+        #{issDeclDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isPublicIss != null" >
+        #{isPublicIss,jdbcType=VARCHAR},
+      </if>
+      <if test="issFeeRate != null" >
+        #{issFeeRate,jdbcType=DECIMAL},
+      </if>
+      <if test="bokepDate != null" >
+        #{bokepDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="debtRegDate != null" >
+        #{debtRegDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="newSize != null" >
+        #{newSize,jdbcType=DECIMAL},
+      </if>
+      <if test="subsUnit != null" >
+        #{subsUnit,jdbcType=DECIMAL},
+      </if>
+      <if test="leastSubsUnit != null" >
+        #{leastSubsUnit,jdbcType=DECIMAL},
+      </if>
+      <if test="curyTypePar != null" >
+        #{curyTypePar,jdbcType=INTEGER},
+      </if>
+      <if test="isListPar != null" >
+        #{isListPar,jdbcType=INTEGER},
+      </if>
+      <if test="tradeUnit != null" >
+        #{tradeUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="circuAmut != null" >
+        #{circuAmut,jdbcType=DECIMAL},
+      </if>
+      <if test="isCrosMarPar != null" >
+        #{isCrosMarPar,jdbcType=VARCHAR},
+      </if>
+      <if test="listSectPar != null" >
+        #{listSectPar,jdbcType=INTEGER},
+      </if>
+      <if test="listStaPar != null" >
+        #{listStaPar,jdbcType=INTEGER},
+      </if>
+      <if test="theoDelistDate != null" >
+        #{theoDelistDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastTradeDate != null" >
+        #{lastTradeDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="actuDelistDate != null" >
+        #{actuDelistDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="speShortName != null" >
+        #{speShortName,jdbcType=VARCHAR},
+      </if>
+      <if test="engFullName != null" >
+        #{engFullName,jdbcType=VARCHAR},
+      </if>
+      <if test="engShortName != null" >
+        #{engShortName,jdbcType=VARCHAR},
+      </if>
+      <if test="isinCode != null" >
+        #{isinCode,jdbcType=VARCHAR},
+      </if>
+      <if test="currStatus != null" >
+        #{currStatus,jdbcType=INTEGER},
+      </if>
+      <if test="bondParVal != null" >
+        #{bondParVal,jdbcType=DECIMAL},
+      </if>
+      <if test="isTypePar != null" >
+        #{isTypePar,jdbcType=INTEGER},
+      </if>
+      <if test="bondFormPar != null" >
+        #{bondFormPar,jdbcType=INTEGER},
+      </if>
+      <if test="actuEndDate != null" >
+        #{actuEndDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="newCoupRate != null" >
+        #{newCoupRate,jdbcType=DECIMAL},
+      </if>
+      <if test="refYield != null" >
+        #{refYield,jdbcType=DECIMAL},
+      </if>
+      <if test="initBaseRateDate != null" >
+        #{initBaseRateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="baseRate != null" >
+        #{baseRate,jdbcType=DECIMAL},
+      </if>
+      <if test="optExtraSpr != null" >
+        #{optExtraSpr,jdbcType=DECIMAL},
+      </if>
+      <if test="extraSprSeqNum != null" >
+        #{extraSprSeqNum,jdbcType=INTEGER},
+      </if>
+      <if test="rateCeil != null" >
+        #{rateCeil,jdbcType=DECIMAL},
+      </if>
+      <if test="rateFloor != null" >
+        #{rateFloor,jdbcType=DECIMAL},
+      </if>
+      <if test="inteCalcuClsPar != null" >
+        #{inteCalcuClsPar,jdbcType=INTEGER},
+      </if>
+      <if test="isSegmPar != null" >
+        #{isSegmPar,jdbcType=INTEGER},
+      </if>
+      <if test="simpCompIntePar != null" >
+        #{simpCompIntePar,jdbcType=INTEGER},
+      </if>
+      <if test="repayClsPayPar != null" >
+        #{repayClsPayPar,jdbcType=INTEGER},
+      </if>
+      <if test="matuPayDate != null" >
+        #{matuPayDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="payFeeRate != null" >
+        #{payFeeRate,jdbcType=DECIMAL},
+      </if>
+      <if test="isGuarPar != null" >
+        #{isGuarPar,jdbcType=INTEGER},
+      </if>
+      <if test="isRepuPar != null" >
+        #{isRepuPar,jdbcType=INTEGER},
+      </if>
+      <if test="pledgeCode != null" >
+        #{pledgeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="pledgeName != null" >
+        #{pledgeName,jdbcType=VARCHAR},
+      </if>
+      <if test="isRedemPar != null" >
+        #{isRedemPar,jdbcType=INTEGER},
+      </if>
+      <if test="isResaPar != null" >
+        #{isResaPar,jdbcType=INTEGER},
+      </if>
+      <if test="isHedgePar != null" >
+        #{isHedgePar,jdbcType=INTEGER},
+      </if>
+      <if test="isTaxFreePar != null" >
+        #{isTaxFreePar,jdbcType=INTEGER},
+      </if>
+      <if test="matuUnitPar != null" >
+        #{matuUnitPar,jdbcType=INTEGER},
+      </if>
+      <if test="issStaPar != null" >
+        #{issStaPar,jdbcType=INTEGER},
+      </if>
+      <if test="bondId != null" >
+        #{bondId,jdbcType=BIGINT},
+      </if>
+      <if test="createUser != null" >
+        #{createUser,jdbcType=BIGINT},
+      </if>
+      <if test="lastUpdateUser != null" >
+        #{lastUpdateUser,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastUpdateTime != null" >
+        #{lastUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="delStatus != null" >
+        #{delStatus,jdbcType=TINYINT},
+      </if>
+      <if test="dataSource != null" >
+        #{dataSource,jdbcType=INTEGER},
+      </if>
+      <if test="bondType != null" >
+        #{bondType,jdbcType=INTEGER},
+      </if>
+      <if test="infoState != null" >
+        #{infoState,jdbcType=INTEGER},
+      </if>
+      <if test="saveStatus != null" >
+        #{saveStatus,jdbcType=TINYINT},
+      </if>
+      <if test="issCredLevelPar != null" >
+        #{issCredLevelPar,jdbcType=INTEGER},
+      </if>
+      <if test="issCredLevel != null" >
+        #{issCredLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="bondCredLevelPar != null" >
+        #{bondCredLevelPar,jdbcType=INTEGER},
+      </if>
+      <if test="bondCredLevel != null" >
+        #{bondCredLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="pd != null" >
+        #{pd,jdbcType=VARCHAR},
+      </if>
+      <if test="pdDiff != null" >
+        #{pdDiff,jdbcType=INTEGER},
+      </if>
+      <if test="pdNum != null" >
+        #{pdNum,jdbcType=INTEGER},
+      </if>
+      <if test="orgId != null" >
+        #{orgId,jdbcType=INTEGER},
+      </if>
+      <if test="entryStatus != null" >
+        #{entryStatus,jdbcType=INTEGER},
+      </if>
+      <if test="yearPayMatu != null" >
+        #{yearPayMatu,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="rateDes != null" >
+        #{rateDes,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="collCapPurp != null" >
+        #{collCapPurp,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="undeName != null" >
+        #{undeName,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="issCls != null" >
+        #{issCls,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="issClsDes != null" >
+        #{issClsDes,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="issObj != null" >
+        #{issObj,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="crosMarDes != null" >
+        #{crosMarDes,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="inteDes != null" >
+        #{inteDes,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="intePayMeth != null" >
+        #{intePayMeth,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="payMatu != null" >
+        #{payMatu,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="payClsDes != null" >
+        #{payClsDes,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="optDes != null" >
+        #{optDes,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="guraName != null" >
+        #{guraName,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="guraName1 != null" >
+        #{guraName1,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="spomName != null" >
+        #{spomName,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.dome.model.BondBasicInfoWithBLOBs" >
+    update t_bond_basic_info
+    <set >
+      <if test="bondUniCode != null" >
+        bond_uni_code = #{bondUniCode,jdbcType=BIGINT},
+      </if>
+      <if test="bondCode != null" >
+        bond_code = #{bondCode,jdbcType=VARCHAR},
+      </if>
+      <if test="bondShortName != null" >
+        bond_short_name = #{bondShortName,jdbcType=VARCHAR},
+      </if>
+      <if test="bondFullName != null" >
+        bond_full_name = #{bondFullName,jdbcType=VARCHAR},
+      </if>
+      <if test="comUniCode != null" >
+        com_uni_code = #{comUniCode,jdbcType=BIGINT},
+      </if>
+      <if test="issName != null" >
+        iss_name = #{issName,jdbcType=VARCHAR},
+      </if>
+      <if test="issStartDate != null" >
+        iss_start_date = #{issStartDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="issEndDate != null" >
+        iss_end_date = #{issEndDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="yearPayDate != null" >
+        year_pay_date = #{yearPayDate,jdbcType=VARCHAR},
+      </if>
+      <if test="inteStartDate != null" >
+        inte_start_date = #{inteStartDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="theoEndDate != null" >
+        theo_end_date = #{theoEndDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="intePayFreq != null" >
+        inte_pay_freq = #{intePayFreq,jdbcType=INTEGER},
+      </if>
+      <if test="intePayClsPar != null" >
+        inte_pay_cls_par = #{intePayClsPar,jdbcType=INTEGER},
+      </if>
+      <if test="exerPayDate != null" >
+        exer_pay_date = #{exerPayDate,jdbcType=VARCHAR},
+      </if>
+      <if test="planIssAmut != null" >
+        plan_iss_amut = #{planIssAmut,jdbcType=DECIMAL},
+      </if>
+      <if test="actuIssAmut != null" >
+        actu_iss_amut = #{actuIssAmut,jdbcType=DECIMAL},
+      </if>
+      <if test="bondMatu != null" >
+        bond_matu = #{bondMatu,jdbcType=DECIMAL},
+      </if>
+      <if test="bondTypePar != null" >
+        bond_type_par = #{bondTypePar,jdbcType=INTEGER},
+      </if>
+      <if test="credUniCode != null" >
+        cred_uni_code = #{credUniCode,jdbcType=BIGINT},
+      </if>
+      <if test="rateTypePar != null" >
+        rate_type_par = #{rateTypePar,jdbcType=INTEGER},
+      </if>
+      <if test="issCoupRate != null" >
+        iss_coup_rate = #{issCoupRate,jdbcType=DECIMAL},
+      </if>
+      <if test="baseRatePar != null" >
+        base_rate_par = #{baseRatePar,jdbcType=VARCHAR},
+      </if>
+      <if test="listDate != null" >
+        list_date = #{listDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="listDeclDate != null" >
+        list_decl_date = #{listDeclDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="secMarPar != null" >
+        sec_mar_par = #{secMarPar,jdbcType=VARCHAR},
+      </if>
+      <if test="undeClsPar != null" >
+        unde_cls_par = #{undeClsPar,jdbcType=INTEGER},
+      </if>
+      <if test="issPri != null" >
+        iss_pri = #{issPri,jdbcType=DECIMAL},
+      </if>
+      <if test="issStatus != null" >
+        iss_status = #{issStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="isNew != null" >
+        is_new = #{isNew,jdbcType=VARCHAR},
+      </if>
+      <if test="bondIssYear != null" >
+        bond_iss_year = #{bondIssYear,jdbcType=VARCHAR},
+      </if>
+      <if test="issDeclDate != null" >
+        iss_decl_date = #{issDeclDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isPublicIss != null" >
+        is_public_iss = #{isPublicIss,jdbcType=VARCHAR},
+      </if>
+      <if test="issFeeRate != null" >
+        iss_fee_rate = #{issFeeRate,jdbcType=DECIMAL},
+      </if>
+      <if test="bokepDate != null" >
+        bokep_date = #{bokepDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="debtRegDate != null" >
+        debt_reg_date = #{debtRegDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="newSize != null" >
+        new_size = #{newSize,jdbcType=DECIMAL},
+      </if>
+      <if test="subsUnit != null" >
+        subs_unit = #{subsUnit,jdbcType=DECIMAL},
+      </if>
+      <if test="leastSubsUnit != null" >
+        least_subs_unit = #{leastSubsUnit,jdbcType=DECIMAL},
+      </if>
+      <if test="curyTypePar != null" >
+        cury_type_par = #{curyTypePar,jdbcType=INTEGER},
+      </if>
+      <if test="isListPar != null" >
+        is_list_par = #{isListPar,jdbcType=INTEGER},
+      </if>
+      <if test="tradeUnit != null" >
+        trade_unit = #{tradeUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="circuAmut != null" >
+        circu_amut = #{circuAmut,jdbcType=DECIMAL},
+      </if>
+      <if test="isCrosMarPar != null" >
+        is_cros_mar_par = #{isCrosMarPar,jdbcType=VARCHAR},
+      </if>
+      <if test="listSectPar != null" >
+        list_sect_par = #{listSectPar,jdbcType=INTEGER},
+      </if>
+      <if test="listStaPar != null" >
+        list_sta_par = #{listStaPar,jdbcType=INTEGER},
+      </if>
+      <if test="theoDelistDate != null" >
+        theo_delist_date = #{theoDelistDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastTradeDate != null" >
+        last_trade_date = #{lastTradeDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="actuDelistDate != null" >
+        actu_delist_date = #{actuDelistDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="speShortName != null" >
+        spe_short_name = #{speShortName,jdbcType=VARCHAR},
+      </if>
+      <if test="engFullName != null" >
+        eng_full_name = #{engFullName,jdbcType=VARCHAR},
+      </if>
+      <if test="engShortName != null" >
+        eng_short_name = #{engShortName,jdbcType=VARCHAR},
+      </if>
+      <if test="isinCode != null" >
+        isin_code = #{isinCode,jdbcType=VARCHAR},
+      </if>
+      <if test="currStatus != null" >
+        curr_status = #{currStatus,jdbcType=INTEGER},
+      </if>
+      <if test="bondParVal != null" >
+        bond_par_val = #{bondParVal,jdbcType=DECIMAL},
+      </if>
+      <if test="isTypePar != null" >
+        is_type_par = #{isTypePar,jdbcType=INTEGER},
+      </if>
+      <if test="bondFormPar != null" >
+        bond_form_par = #{bondFormPar,jdbcType=INTEGER},
+      </if>
+      <if test="actuEndDate != null" >
+        actu_end_date = #{actuEndDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="newCoupRate != null" >
+        new_coup_rate = #{newCoupRate,jdbcType=DECIMAL},
+      </if>
+      <if test="refYield != null" >
+        ref_yield = #{refYield,jdbcType=DECIMAL},
+      </if>
+      <if test="initBaseRateDate != null" >
+        init_base_rate_date = #{initBaseRateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="baseRate != null" >
+        base_rate = #{baseRate,jdbcType=DECIMAL},
+      </if>
+      <if test="optExtraSpr != null" >
+        opt_extra_spr = #{optExtraSpr,jdbcType=DECIMAL},
+      </if>
+      <if test="extraSprSeqNum != null" >
+        extra_spr_seq_num = #{extraSprSeqNum,jdbcType=INTEGER},
+      </if>
+      <if test="rateCeil != null" >
+        rate_ceil = #{rateCeil,jdbcType=DECIMAL},
+      </if>
+      <if test="rateFloor != null" >
+        rate_floor = #{rateFloor,jdbcType=DECIMAL},
+      </if>
+      <if test="inteCalcuClsPar != null" >
+        inte_calcu_cls_par = #{inteCalcuClsPar,jdbcType=INTEGER},
+      </if>
+      <if test="isSegmPar != null" >
+        is_segm_par = #{isSegmPar,jdbcType=INTEGER},
+      </if>
+      <if test="simpCompIntePar != null" >
+        simp_comp_inte_par = #{simpCompIntePar,jdbcType=INTEGER},
+      </if>
+      <if test="repayClsPayPar != null" >
+        repay_cls_pay_par = #{repayClsPayPar,jdbcType=INTEGER},
+      </if>
+      <if test="matuPayDate != null" >
+        matu_pay_date = #{matuPayDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="payFeeRate != null" >
+        pay_fee_rate = #{payFeeRate,jdbcType=DECIMAL},
+      </if>
+      <if test="isGuarPar != null" >
+        is_guar_par = #{isGuarPar,jdbcType=INTEGER},
+      </if>
+      <if test="isRepuPar != null" >
+        is_repu_par = #{isRepuPar,jdbcType=INTEGER},
+      </if>
+      <if test="pledgeCode != null" >
+        pledge_code = #{pledgeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="pledgeName != null" >
+        pledge_name = #{pledgeName,jdbcType=VARCHAR},
+      </if>
+      <if test="isRedemPar != null" >
+        is_redem_par = #{isRedemPar,jdbcType=INTEGER},
+      </if>
+      <if test="isResaPar != null" >
+        is_resa_par = #{isResaPar,jdbcType=INTEGER},
+      </if>
+      <if test="isHedgePar != null" >
+        is_hedge_par = #{isHedgePar,jdbcType=INTEGER},
+      </if>
+      <if test="isTaxFreePar != null" >
+        is_tax_free_par = #{isTaxFreePar,jdbcType=INTEGER},
+      </if>
+      <if test="matuUnitPar != null" >
+        matu_unit_par = #{matuUnitPar,jdbcType=INTEGER},
+      </if>
+      <if test="issStaPar != null" >
+        iss_sta_par = #{issStaPar,jdbcType=INTEGER},
+      </if>
+      <if test="bondId != null" >
+        bond_id = #{bondId,jdbcType=BIGINT},
+      </if>
+      <if test="createUser != null" >
+        create_user = #{createUser,jdbcType=BIGINT},
+      </if>
+      <if test="lastUpdateUser != null" >
+        last_update_user = #{lastUpdateUser,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastUpdateTime != null" >
+        last_update_time = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="delStatus != null" >
+        del_status = #{delStatus,jdbcType=TINYINT},
+      </if>
+      <if test="dataSource != null" >
+        data_source = #{dataSource,jdbcType=INTEGER},
+      </if>
+      <if test="bondType != null" >
+        bond_type = #{bondType,jdbcType=INTEGER},
+      </if>
+      <if test="infoState != null" >
+        info_state = #{infoState,jdbcType=INTEGER},
+      </if>
+      <if test="saveStatus != null" >
+        save_status = #{saveStatus,jdbcType=TINYINT},
+      </if>
+      <if test="issCredLevelPar != null" >
+        iss_cred_level_par = #{issCredLevelPar,jdbcType=INTEGER},
+      </if>
+      <if test="issCredLevel != null" >
+        iss_cred_level = #{issCredLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="bondCredLevelPar != null" >
+        bond_cred_level_par = #{bondCredLevelPar,jdbcType=INTEGER},
+      </if>
+      <if test="bondCredLevel != null" >
+        bond_cred_level = #{bondCredLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="pd != null" >
+        pd = #{pd,jdbcType=VARCHAR},
+      </if>
+      <if test="pdDiff != null" >
+        pd_diff = #{pdDiff,jdbcType=INTEGER},
+      </if>
+      <if test="pdNum != null" >
+        pd_num = #{pdNum,jdbcType=INTEGER},
+      </if>
+      <if test="orgId != null" >
+        org_id = #{orgId,jdbcType=INTEGER},
+      </if>
+      <if test="entryStatus != null" >
+        entry_status = #{entryStatus,jdbcType=INTEGER},
+      </if>
+      <if test="yearPayMatu != null" >
+        year_pay_matu = #{yearPayMatu,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="rateDes != null" >
+        rate_des = #{rateDes,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="collCapPurp != null" >
+        coll_cap_purp = #{collCapPurp,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="undeName != null" >
+        unde_name = #{undeName,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="issCls != null" >
+        iss_cls = #{issCls,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="issClsDes != null" >
+        iss_cls_des = #{issClsDes,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="issObj != null" >
+        iss_obj = #{issObj,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="crosMarDes != null" >
+        cros_mar_des = #{crosMarDes,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="inteDes != null" >
+        inte_des = #{inteDes,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="intePayMeth != null" >
+        inte_pay_meth = #{intePayMeth,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="payMatu != null" >
+        pay_matu = #{payMatu,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="payClsDes != null" >
+        pay_cls_des = #{payClsDes,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="optDes != null" >
+        opt_des = #{optDes,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="guraName != null" >
+        gura_name = #{guraName,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="guraName1 != null" >
+        gura_name1 = #{guraName1,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="spomName != null" >
+        spom_name = #{spomName,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.example.dome.model.BondBasicInfoWithBLOBs" >
+    update t_bond_basic_info
+    set bond_uni_code = #{bondUniCode,jdbcType=BIGINT},
+      bond_code = #{bondCode,jdbcType=VARCHAR},
+      bond_short_name = #{bondShortName,jdbcType=VARCHAR},
+      bond_full_name = #{bondFullName,jdbcType=VARCHAR},
+      com_uni_code = #{comUniCode,jdbcType=BIGINT},
+      iss_name = #{issName,jdbcType=VARCHAR},
+      iss_start_date = #{issStartDate,jdbcType=TIMESTAMP},
+      iss_end_date = #{issEndDate,jdbcType=TIMESTAMP},
+      year_pay_date = #{yearPayDate,jdbcType=VARCHAR},
+      inte_start_date = #{inteStartDate,jdbcType=TIMESTAMP},
+      theo_end_date = #{theoEndDate,jdbcType=TIMESTAMP},
+      inte_pay_freq = #{intePayFreq,jdbcType=INTEGER},
+      inte_pay_cls_par = #{intePayClsPar,jdbcType=INTEGER},
+      exer_pay_date = #{exerPayDate,jdbcType=VARCHAR},
+      plan_iss_amut = #{planIssAmut,jdbcType=DECIMAL},
+      actu_iss_amut = #{actuIssAmut,jdbcType=DECIMAL},
+      bond_matu = #{bondMatu,jdbcType=DECIMAL},
+      bond_type_par = #{bondTypePar,jdbcType=INTEGER},
+      cred_uni_code = #{credUniCode,jdbcType=BIGINT},
+      rate_type_par = #{rateTypePar,jdbcType=INTEGER},
+      iss_coup_rate = #{issCoupRate,jdbcType=DECIMAL},
+      base_rate_par = #{baseRatePar,jdbcType=VARCHAR},
+      list_date = #{listDate,jdbcType=TIMESTAMP},
+      list_decl_date = #{listDeclDate,jdbcType=TIMESTAMP},
+      sec_mar_par = #{secMarPar,jdbcType=VARCHAR},
+      unde_cls_par = #{undeClsPar,jdbcType=INTEGER},
+      iss_pri = #{issPri,jdbcType=DECIMAL},
+      iss_status = #{issStatus,jdbcType=VARCHAR},
+      is_new = #{isNew,jdbcType=VARCHAR},
+      bond_iss_year = #{bondIssYear,jdbcType=VARCHAR},
+      iss_decl_date = #{issDeclDate,jdbcType=TIMESTAMP},
+      is_public_iss = #{isPublicIss,jdbcType=VARCHAR},
+      iss_fee_rate = #{issFeeRate,jdbcType=DECIMAL},
+      bokep_date = #{bokepDate,jdbcType=TIMESTAMP},
+      debt_reg_date = #{debtRegDate,jdbcType=TIMESTAMP},
+      new_size = #{newSize,jdbcType=DECIMAL},
+      subs_unit = #{subsUnit,jdbcType=DECIMAL},
+      least_subs_unit = #{leastSubsUnit,jdbcType=DECIMAL},
+      cury_type_par = #{curyTypePar,jdbcType=INTEGER},
+      is_list_par = #{isListPar,jdbcType=INTEGER},
+      trade_unit = #{tradeUnit,jdbcType=VARCHAR},
+      circu_amut = #{circuAmut,jdbcType=DECIMAL},
+      is_cros_mar_par = #{isCrosMarPar,jdbcType=VARCHAR},
+      list_sect_par = #{listSectPar,jdbcType=INTEGER},
+      list_sta_par = #{listStaPar,jdbcType=INTEGER},
+      theo_delist_date = #{theoDelistDate,jdbcType=TIMESTAMP},
+      last_trade_date = #{lastTradeDate,jdbcType=TIMESTAMP},
+      actu_delist_date = #{actuDelistDate,jdbcType=TIMESTAMP},
+      spe_short_name = #{speShortName,jdbcType=VARCHAR},
+      eng_full_name = #{engFullName,jdbcType=VARCHAR},
+      eng_short_name = #{engShortName,jdbcType=VARCHAR},
+      isin_code = #{isinCode,jdbcType=VARCHAR},
+      curr_status = #{currStatus,jdbcType=INTEGER},
+      bond_par_val = #{bondParVal,jdbcType=DECIMAL},
+      is_type_par = #{isTypePar,jdbcType=INTEGER},
+      bond_form_par = #{bondFormPar,jdbcType=INTEGER},
+      actu_end_date = #{actuEndDate,jdbcType=TIMESTAMP},
+      new_coup_rate = #{newCoupRate,jdbcType=DECIMAL},
+      ref_yield = #{refYield,jdbcType=DECIMAL},
+      init_base_rate_date = #{initBaseRateDate,jdbcType=TIMESTAMP},
+      base_rate = #{baseRate,jdbcType=DECIMAL},
+      opt_extra_spr = #{optExtraSpr,jdbcType=DECIMAL},
+      extra_spr_seq_num = #{extraSprSeqNum,jdbcType=INTEGER},
+      rate_ceil = #{rateCeil,jdbcType=DECIMAL},
+      rate_floor = #{rateFloor,jdbcType=DECIMAL},
+      inte_calcu_cls_par = #{inteCalcuClsPar,jdbcType=INTEGER},
+      is_segm_par = #{isSegmPar,jdbcType=INTEGER},
+      simp_comp_inte_par = #{simpCompIntePar,jdbcType=INTEGER},
+      repay_cls_pay_par = #{repayClsPayPar,jdbcType=INTEGER},
+      matu_pay_date = #{matuPayDate,jdbcType=TIMESTAMP},
+      pay_fee_rate = #{payFeeRate,jdbcType=DECIMAL},
+      is_guar_par = #{isGuarPar,jdbcType=INTEGER},
+      is_repu_par = #{isRepuPar,jdbcType=INTEGER},
+      pledge_code = #{pledgeCode,jdbcType=VARCHAR},
+      pledge_name = #{pledgeName,jdbcType=VARCHAR},
+      is_redem_par = #{isRedemPar,jdbcType=INTEGER},
+      is_resa_par = #{isResaPar,jdbcType=INTEGER},
+      is_hedge_par = #{isHedgePar,jdbcType=INTEGER},
+      is_tax_free_par = #{isTaxFreePar,jdbcType=INTEGER},
+      matu_unit_par = #{matuUnitPar,jdbcType=INTEGER},
+      iss_sta_par = #{issStaPar,jdbcType=INTEGER},
+      bond_id = #{bondId,jdbcType=BIGINT},
+      create_user = #{createUser,jdbcType=BIGINT},
+      last_update_user = #{lastUpdateUser,jdbcType=BIGINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      last_update_time = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      del_status = #{delStatus,jdbcType=TINYINT},
+      data_source = #{dataSource,jdbcType=INTEGER},
+      bond_type = #{bondType,jdbcType=INTEGER},
+      info_state = #{infoState,jdbcType=INTEGER},
+      save_status = #{saveStatus,jdbcType=TINYINT},
+      iss_cred_level_par = #{issCredLevelPar,jdbcType=INTEGER},
+      iss_cred_level = #{issCredLevel,jdbcType=VARCHAR},
+      bond_cred_level_par = #{bondCredLevelPar,jdbcType=INTEGER},
+      bond_cred_level = #{bondCredLevel,jdbcType=VARCHAR},
+      pd = #{pd,jdbcType=VARCHAR},
+      pd_diff = #{pdDiff,jdbcType=INTEGER},
+      pd_num = #{pdNum,jdbcType=INTEGER},
+      org_id = #{orgId,jdbcType=INTEGER},
+      entry_status = #{entryStatus,jdbcType=INTEGER},
+      year_pay_matu = #{yearPayMatu,jdbcType=LONGVARCHAR},
+      rate_des = #{rateDes,jdbcType=LONGVARCHAR},
+      coll_cap_purp = #{collCapPurp,jdbcType=LONGVARCHAR},
+      unde_name = #{undeName,jdbcType=LONGVARCHAR},
+      iss_cls = #{issCls,jdbcType=LONGVARCHAR},
+      iss_cls_des = #{issClsDes,jdbcType=LONGVARCHAR},
+      iss_obj = #{issObj,jdbcType=LONGVARCHAR},
+      cros_mar_des = #{crosMarDes,jdbcType=LONGVARCHAR},
+      inte_des = #{inteDes,jdbcType=LONGVARCHAR},
+      inte_pay_meth = #{intePayMeth,jdbcType=LONGVARCHAR},
+      pay_matu = #{payMatu,jdbcType=LONGVARCHAR},
+      pay_cls_des = #{payClsDes,jdbcType=LONGVARCHAR},
+      opt_des = #{optDes,jdbcType=LONGVARCHAR},
+      gura_name = #{guraName,jdbcType=LONGVARCHAR},
+      gura_name1 = #{guraName1,jdbcType=LONGVARCHAR},
+      spom_name = #{spomName,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.dome.model.BondBasicInfo" >
+    update t_bond_basic_info
+    set bond_uni_code = #{bondUniCode,jdbcType=BIGINT},
+      bond_code = #{bondCode,jdbcType=VARCHAR},
+      bond_short_name = #{bondShortName,jdbcType=VARCHAR},
+      bond_full_name = #{bondFullName,jdbcType=VARCHAR},
+      com_uni_code = #{comUniCode,jdbcType=BIGINT},
+      iss_name = #{issName,jdbcType=VARCHAR},
+      iss_start_date = #{issStartDate,jdbcType=TIMESTAMP},
+      iss_end_date = #{issEndDate,jdbcType=TIMESTAMP},
+      year_pay_date = #{yearPayDate,jdbcType=VARCHAR},
+      inte_start_date = #{inteStartDate,jdbcType=TIMESTAMP},
+      theo_end_date = #{theoEndDate,jdbcType=TIMESTAMP},
+      inte_pay_freq = #{intePayFreq,jdbcType=INTEGER},
+      inte_pay_cls_par = #{intePayClsPar,jdbcType=INTEGER},
+      exer_pay_date = #{exerPayDate,jdbcType=VARCHAR},
+      plan_iss_amut = #{planIssAmut,jdbcType=DECIMAL},
+      actu_iss_amut = #{actuIssAmut,jdbcType=DECIMAL},
+      bond_matu = #{bondMatu,jdbcType=DECIMAL},
+      bond_type_par = #{bondTypePar,jdbcType=INTEGER},
+      cred_uni_code = #{credUniCode,jdbcType=BIGINT},
+      rate_type_par = #{rateTypePar,jdbcType=INTEGER},
+      iss_coup_rate = #{issCoupRate,jdbcType=DECIMAL},
+      base_rate_par = #{baseRatePar,jdbcType=VARCHAR},
+      list_date = #{listDate,jdbcType=TIMESTAMP},
+      list_decl_date = #{listDeclDate,jdbcType=TIMESTAMP},
+      sec_mar_par = #{secMarPar,jdbcType=VARCHAR},
+      unde_cls_par = #{undeClsPar,jdbcType=INTEGER},
+      iss_pri = #{issPri,jdbcType=DECIMAL},
+      iss_status = #{issStatus,jdbcType=VARCHAR},
+      is_new = #{isNew,jdbcType=VARCHAR},
+      bond_iss_year = #{bondIssYear,jdbcType=VARCHAR},
+      iss_decl_date = #{issDeclDate,jdbcType=TIMESTAMP},
+      is_public_iss = #{isPublicIss,jdbcType=VARCHAR},
+      iss_fee_rate = #{issFeeRate,jdbcType=DECIMAL},
+      bokep_date = #{bokepDate,jdbcType=TIMESTAMP},
+      debt_reg_date = #{debtRegDate,jdbcType=TIMESTAMP},
+      new_size = #{newSize,jdbcType=DECIMAL},
+      subs_unit = #{subsUnit,jdbcType=DECIMAL},
+      least_subs_unit = #{leastSubsUnit,jdbcType=DECIMAL},
+      cury_type_par = #{curyTypePar,jdbcType=INTEGER},
+      is_list_par = #{isListPar,jdbcType=INTEGER},
+      trade_unit = #{tradeUnit,jdbcType=VARCHAR},
+      circu_amut = #{circuAmut,jdbcType=DECIMAL},
+      is_cros_mar_par = #{isCrosMarPar,jdbcType=VARCHAR},
+      list_sect_par = #{listSectPar,jdbcType=INTEGER},
+      list_sta_par = #{listStaPar,jdbcType=INTEGER},
+      theo_delist_date = #{theoDelistDate,jdbcType=TIMESTAMP},
+      last_trade_date = #{lastTradeDate,jdbcType=TIMESTAMP},
+      actu_delist_date = #{actuDelistDate,jdbcType=TIMESTAMP},
+      spe_short_name = #{speShortName,jdbcType=VARCHAR},
+      eng_full_name = #{engFullName,jdbcType=VARCHAR},
+      eng_short_name = #{engShortName,jdbcType=VARCHAR},
+      isin_code = #{isinCode,jdbcType=VARCHAR},
+      curr_status = #{currStatus,jdbcType=INTEGER},
+      bond_par_val = #{bondParVal,jdbcType=DECIMAL},
+      is_type_par = #{isTypePar,jdbcType=INTEGER},
+      bond_form_par = #{bondFormPar,jdbcType=INTEGER},
+      actu_end_date = #{actuEndDate,jdbcType=TIMESTAMP},
+      new_coup_rate = #{newCoupRate,jdbcType=DECIMAL},
+      ref_yield = #{refYield,jdbcType=DECIMAL},
+      init_base_rate_date = #{initBaseRateDate,jdbcType=TIMESTAMP},
+      base_rate = #{baseRate,jdbcType=DECIMAL},
+      opt_extra_spr = #{optExtraSpr,jdbcType=DECIMAL},
+      extra_spr_seq_num = #{extraSprSeqNum,jdbcType=INTEGER},
+      rate_ceil = #{rateCeil,jdbcType=DECIMAL},
+      rate_floor = #{rateFloor,jdbcType=DECIMAL},
+      inte_calcu_cls_par = #{inteCalcuClsPar,jdbcType=INTEGER},
+      is_segm_par = #{isSegmPar,jdbcType=INTEGER},
+      simp_comp_inte_par = #{simpCompIntePar,jdbcType=INTEGER},
+      repay_cls_pay_par = #{repayClsPayPar,jdbcType=INTEGER},
+      matu_pay_date = #{matuPayDate,jdbcType=TIMESTAMP},
+      pay_fee_rate = #{payFeeRate,jdbcType=DECIMAL},
+      is_guar_par = #{isGuarPar,jdbcType=INTEGER},
+      is_repu_par = #{isRepuPar,jdbcType=INTEGER},
+      pledge_code = #{pledgeCode,jdbcType=VARCHAR},
+      pledge_name = #{pledgeName,jdbcType=VARCHAR},
+      is_redem_par = #{isRedemPar,jdbcType=INTEGER},
+      is_resa_par = #{isResaPar,jdbcType=INTEGER},
+      is_hedge_par = #{isHedgePar,jdbcType=INTEGER},
+      is_tax_free_par = #{isTaxFreePar,jdbcType=INTEGER},
+      matu_unit_par = #{matuUnitPar,jdbcType=INTEGER},
+      iss_sta_par = #{issStaPar,jdbcType=INTEGER},
+      bond_id = #{bondId,jdbcType=BIGINT},
+      create_user = #{createUser,jdbcType=BIGINT},
+      last_update_user = #{lastUpdateUser,jdbcType=BIGINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      last_update_time = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      del_status = #{delStatus,jdbcType=TINYINT},
+      data_source = #{dataSource,jdbcType=INTEGER},
+      bond_type = #{bondType,jdbcType=INTEGER},
+      info_state = #{infoState,jdbcType=INTEGER},
+      save_status = #{saveStatus,jdbcType=TINYINT},
+      iss_cred_level_par = #{issCredLevelPar,jdbcType=INTEGER},
+      iss_cred_level = #{issCredLevel,jdbcType=VARCHAR},
+      bond_cred_level_par = #{bondCredLevelPar,jdbcType=INTEGER},
+      bond_cred_level = #{bondCredLevel,jdbcType=VARCHAR},
+      pd = #{pd,jdbcType=VARCHAR},
+      pd_diff = #{pdDiff,jdbcType=INTEGER},
+      pd_num = #{pdNum,jdbcType=INTEGER},
+      org_id = #{orgId,jdbcType=INTEGER},
+      entry_status = #{entryStatus,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
